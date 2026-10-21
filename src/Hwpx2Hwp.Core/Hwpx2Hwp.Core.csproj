@@ -1,0 +1,8 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <!-- Core: BCL 만 사용. ProjectReference·PackageReference 금지(docs/design/baseline.md D-2, D-10) -->
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <RootNamespace>Hwpx2Hwp.Core</RootNamespace>
+    <AssemblyName>Hwpx2Hwp.Core</AssemblyName>
+  </PropertyGroup>
+</Project>

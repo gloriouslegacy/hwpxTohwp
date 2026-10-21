@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <!-- App: 화면·조립 지점. 배포 설정은 docs/design/baseline.md D-8, D-9 -->
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+    <RootNamespace>Hwpx2Hwp.App</RootNamespace>
+    <AssemblyName>hwpx2hwp</AssemblyName>
+    <ApplicationHighDpiMode>PerMonitorV2</ApplicationHighDpiMode>
+  </PropertyGroup>
+
+  <!-- 배포: self-contained 단일 exe. PublishTrimmed 금지(WinForms·COM 미지원), ReadyToRun 끔(교차 컴파일 회피).
+       -r win-x64 를 줄 때만 켠다: RID 없이 SelfContained 를 켜면 맥 빌드가 osx-arm64 WinForms 런타임 팩을 찾다 실패(NETSDK1082). -->
+  <PropertyGroup Condition="'$(RuntimeIdentifier)' != ''">
+    <SelfContained>true</SelfContained>
+    <PublishSingleFile>true</PublishSingleFile>
+    <IncludeNativeLibrariesForSelfExtract>true</IncludeNativeLibrariesForSelfExtract>
+    <EnableCompressionInSingleFile>true</EnableCompressionInSingleFile>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <PublishTrimmed>false</PublishTrimmed>
+    <PublishReadyToRun>false</PublishReadyToRun>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Hwpx2Hwp.Core\Hwpx2Hwp.Core.csproj" />
+    <ProjectReference Include="..\Hwpx2Hwp.HwpCom\Hwpx2Hwp.HwpCom.csproj" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,5 @@
+{
+  "env": {
+    "FABLE_ROOT_ALLOW": "*.sln,global.json,directory.build.props"
+  }
+}

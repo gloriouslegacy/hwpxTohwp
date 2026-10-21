@@ -1,0 +1,13 @@
+# .NET 빌드 산출물
+bin/
+obj/
+artifacts/
+
+# 자동 생성 현황(fable map)
+docs/map.md
+
+# IDE·OS
+.vs/
+.idea/
+*.user
+.DS_Store

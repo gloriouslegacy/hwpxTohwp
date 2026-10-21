@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <!-- HwpCom: 한/글 COM 엔진·보안 모듈 등록. Core 만 참조, WinForms 금지(docs/design/baseline.md D-1, D-6, D-7) -->
+  <PropertyGroup>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <RootNamespace>Hwpx2Hwp.HwpCom</RootNamespace>
+    <AssemblyName>Hwpx2Hwp.HwpCom</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Hwpx2Hwp.Core\Hwpx2Hwp.Core.csproj" />
+  </ItemGroup>
+</Project>
